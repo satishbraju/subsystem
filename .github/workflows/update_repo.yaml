@@ -1,0 +1,28 @@
+name: Update Repo
+on:
+  workflow_dispatch:
+       
+    schedule:
+    - cron: "0 15 * * 1-5"
+  
+jobs:
+  update-component:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v3 
+
+      - name: Check work folder
+        run: pwd
+
+      - name: Update identity
+        run: git config --global user.email "satishbraju@gmail.com" && git config --global user.name "satishbraju"
+
+      - name: Update Repo
+        run: git submodule update --init --remote
+
+      - name: Commit chnages
+        run: git add . && git commit -m "update new version" && git push
+      
+      
