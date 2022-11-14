@@ -1,3 +1,3 @@
 [submodule "Subsystem"]
-	path = Subsystem
+	path = Component
 	url = https://github.com/satishbraju/component.git
