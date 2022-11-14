@@ -24,8 +24,7 @@ jobs:
 
       - name: Commit chnages
         run: git add . && git commit -m "update new version" && git push
-    
-    steps:
+   
       - name: Dispatch
         uses: actions/github-script@v6
         with:
